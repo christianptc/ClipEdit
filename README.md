@@ -21,8 +21,9 @@ Windows has `Win + V`, macOS has nothing built in, and neither lets you **edit**
 current clipboard before you paste. ClipEdit does both, from one tiny background app that
 lives in your menu bar / system tray and stays out of your way.
 
-- ⚡️ **Featherweight** — a ~3 MB app. No Electron, no bundled browser. The window's webview
-  isn't even created until you open the popup, so it costs next to nothing while idle.
+- ⚡️ **Featherweight** — a ~3 MB download that runs as a single lightweight process (tens of MB
+  of RAM, no bundled browser — an Electron equivalent uses several times more). The popup's
+  webview isn't even created until you open it.
 - ⌨️ **One hotkey** — `Cmd + B` (macOS) / `Ctrl + B` (Windows) opens the popup anywhere.
 - ✏️ **Editable clipboard** — the current clipboard sits at the top, ready to edit. Press
   **Enter** and the edited text is copied *and* both the old and new versions are saved to history.
