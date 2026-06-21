@@ -48,26 +48,30 @@ lives in your menu bar / system tray and stays out of your way.
 
 ## Install
 
-### Option A — Download (recommended)
+### Download (recommended)
 
-Grab the installer for your platform from the
-[**Releases**](https://github.com/christianptc/ClipEdit/releases) page:
+Get the latest build from the [**Releases**](https://github.com/christianptc/ClipEdit/releases) page.
 
-- **macOS** — open the `.dmg` and drag **ClipEdit** to Applications.
-- **Windows** — run the `.exe` / `.msi` installer.
+#### macOS
+1. Download **`ClipEdit_<version>_universal.dmg`** (runs on both Intel and Apple Silicon).
+2. Open the `.dmg` and drag **ClipEdit** into the **Applications** folder.
+3. The build is **unsigned**, so the first time you must clear the download quarantine. Open
+   **Terminal** and run:
+   ```bash
+   xattr -cr /Applications/ClipEdit.app
+   ```
+   *No-Terminal alternative: double-click ClipEdit, and when macOS blocks it
+   (“ClipEdit is damaged / can’t be opened”), go to
+   **System Settings → Privacy & Security → Open Anyway**.*
+4. Launch **ClipEdit** from Applications or Launchpad. It lives in the **menu bar** (no Dock
+   icon) — press **⌘B** to open the popup.
 
-> These builds are **unsigned** (no paid Apple/Microsoft certificate), so the OS blocks them on first launch.
->
-> **macOS** — if you see *"ClipEdit is damaged"* or *"can't be opened"*, that's just Gatekeeper stopping an
-> unsigned app. Clear the download quarantine once, then open normally:
-> ```bash
-> xattr -cr /Applications/ClipEdit.app
-> ```
-> (Alternatively: try to open it, then go to **System Settings → Privacy & Security → Open Anyway**.)
->
-> **Windows** — on the SmartScreen prompt, click **More info → Run anyway**.
+#### Windows
+1. Download **`ClipEdit_<version>_x64-setup.exe`** (or the `.msi`) and run it.
+2. On the SmartScreen prompt, click **More info → Run anyway** (the build is unsigned).
+3. ClipEdit runs in the **system tray** — press **Ctrl+B** to open the popup.
 
-### Option B — Build from source
+### Build from source
 
 **Prerequisites:** [Rust](https://rustup.rs) and [Node.js](https://nodejs.org) 18+
 (macOS also needs Xcode Command Line Tools; Windows needs the MSVC C++ Build Tools — WebView2 ships with Windows 10/11).
