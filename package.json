@@ -1,0 +1,17 @@
+{
+  "name": "clipedit",
+  "version": "0.1.0",
+  "description": "Lightweight cross-platform clipboard manager with an editable popup and history",
+  "private": true,
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "keywords": ["clipboard", "tauri", "menubar", "tray", "productivity"],
+  "author": "christianptc",
+  "license": "MIT",
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.3"
+  }
+}

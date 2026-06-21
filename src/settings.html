@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="settings.css" />
+    <title>ClipEdit Settings</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>ClipEdit</h1>
+      <p class="sub">Lightweight clipboard manager</p>
+
+      <label class="row">
+        <span><strong>Start on login</strong><small>Launch automatically when you sign in.</small></span>
+        <input type="checkbox" id="autostart" />
+      </label>
+
+      <label class="row">
+        <span><strong>Hotkey</strong><small>Global shortcut to open the popup.</small></span>
+        <input type="text" id="hotkey" placeholder="CmdOrCtrl+B" />
+      </label>
+
+      <label class="row">
+        <span><strong>History size</strong><small>Maximum items to keep.</small></span>
+        <input type="number" id="historySize" min="1" max="1000" />
+      </label>
+
+      <label class="row">
+        <span><strong>Save history to disk</strong><small>Keep history between restarts.</small></span>
+        <input type="checkbox" id="persist" />
+      </label>
+
+      <div class="actions">
+        <button id="save" class="primary">Save</button>
+        <button id="clear">Clear history</button>
+      </div>
+      <button id="quit" class="danger wide">Quit ClipEdit</button>
+
+      <p class="note">
+        Hotkey examples: <code>CmdOrCtrl+B</code>, <code>Alt+Shift+V</code>.
+        Changes apply on Save.
+      </p>
+    </div>
+    <script src="settings.js"></script>
+  </body>
+</html>

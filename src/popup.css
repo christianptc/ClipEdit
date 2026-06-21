@@ -1,0 +1,137 @@
+:root {
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 8px;
+  border-radius: 14px;
+  background: rgba(28, 28, 30, 0.86);
+  backdrop-filter: blur(30px) saturate(170%);
+  -webkit-backdrop-filter: blur(30px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+#current {
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f3f3f5;
+  font-size: 16px;
+  line-height: 1.45;
+  padding: 16px 18px;
+  height: 104px;
+  -webkit-user-select: text;
+  user-select: text;
+}
+#current::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+.sep {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+#filter {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ddd;
+  font-size: 13px;
+  padding: 11px 18px;
+  -webkit-user-select: text;
+  user-select: text;
+}
+#filter::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+#history {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 4px 8px 8px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #e7e7e9;
+  font-size: 13px;
+}
+.item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.item .text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item .del {
+  opacity: 0;
+  border: none;
+  background: transparent;
+  color: #bbb;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+.item:hover .del {
+  opacity: 0.7;
+}
+.item .del:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+}
+#empty {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  padding: 16px 18px;
+  text-align: center;
+}
+#hint {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 9px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+kbd {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-family: inherit;
+}
+#history::-webkit-scrollbar {
+  width: 8px;
+}
+#history::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+}

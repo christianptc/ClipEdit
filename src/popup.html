@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>ClipEdit</title>
+  </head>
+  <body>
+    <div id="app">
+      <textarea id="current" placeholder="Clipboard is empty" spellcheck="false"></textarea>
+      <div class="sep"></div>
+      <input id="filter" type="text" placeholder="Search history…" spellcheck="false" autocomplete="off" />
+      <ul id="history"></ul>
+      <div id="hint">
+        <span><kbd>Enter</kbd> save &amp; copy &nbsp;·&nbsp; <kbd>Esc</kbd> close</span>
+        <span id="count"></span>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
