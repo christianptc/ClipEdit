@@ -31,7 +31,7 @@ fn get_or_build_popup(app: &AppHandle) -> WebviewWindow {
     if let Some(win) = app.get_webview_window(POPUP) {
         return win;
     }
-    WebviewWindowBuilder::new(app, POPUP, WebviewUrl::App("popup.html".into()))
+    let win = WebviewWindowBuilder::new(app, POPUP, WebviewUrl::App("popup.html".into()))
         .title("ClipEdit")
         .inner_size(680.0, 460.0)
         .decorations(false)
@@ -43,7 +43,30 @@ fn get_or_build_popup(app: &AppHandle) -> WebviewWindow {
         .focused(true)
         .center()
         .build()
-        .expect("failed to build popup window")
+        .expect("failed to build popup window");
+    apply_glass(&win);
+    win
+}
+
+/// Apply the native "liquid glass" backdrop so the desktop blurs through the
+/// popup (macOS vibrancy / Windows acrylic). Rounded to match the CSS corners.
+#[allow(unused_variables)]
+fn apply_glass(win: &WebviewWindow) {
+    #[cfg(target_os = "macos")]
+    {
+        use window_vibrancy::{apply_vibrancy, NSVisualEffectMaterial, NSVisualEffectState};
+        let _ = apply_vibrancy(
+            win,
+            NSVisualEffectMaterial::HudWindow,
+            Some(NSVisualEffectState::Active),
+            Some(12.0),
+        );
+    }
+    #[cfg(target_os = "windows")]
+    {
+        use window_vibrancy::apply_acrylic;
+        let _ = apply_acrylic(win, Some((18, 18, 20, 160)));
+    }
 }
 
 /// Open (creating on first use) the settings window.
