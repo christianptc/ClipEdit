@@ -16,7 +16,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["dmg", "nsis", "msi"],
     "category": "Productivity",
     "shortDescription": "Lightweight clipboard manager with an editable popup and history.",
     "longDescription": "ClipEdit is a tiny, fast, cross-platform clipboard manager. Press a hotkey to open a Spotlight-style popup showing your current clipboard (editable) with your copy history beneath it. Lives quietly in the tray / menu bar.",

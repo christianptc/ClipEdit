@@ -56,8 +56,16 @@ Grab the installer for your platform from the
 - **macOS** — open the `.dmg` and drag **ClipEdit** to Applications.
 - **Windows** — run the `.exe` / `.msi` installer.
 
-> These builds are unsigned, so the first launch shows a warning. On macOS, right-click the app →
-> **Open**. On Windows, click **More info → Run anyway**.
+> These builds are **unsigned** (no paid Apple/Microsoft certificate), so the OS blocks them on first launch.
+>
+> **macOS** — if you see *"ClipEdit is damaged"* or *"can't be opened"*, that's just Gatekeeper stopping an
+> unsigned app. Clear the download quarantine once, then open normally:
+> ```bash
+> xattr -cr /Applications/ClipEdit.app
+> ```
+> (Alternatively: try to open it, then go to **System Settings → Privacy & Security → Open Anyway**.)
+>
+> **Windows** — on the SmartScreen prompt, click **More info → Run anyway**.
 
 ### Option B — Build from source
 
